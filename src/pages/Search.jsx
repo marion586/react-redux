@@ -36,9 +36,13 @@ const Search = () => {
 
       {data && (
         <ul>
-          {data.charcters.results.map((charcter) => {
-            return <li key={charcter.name}>{Character.location.name}</li>;
-          })}
+          {data.charcters.results ? (
+            data.charcters.results.map((charcter) => {
+              return <li key={charcter.name}>{Character.location.name}</li>;
+            })
+          ) : (
+            <div>data vide</div>
+          )}
         </ul>
       )}
     </div>
