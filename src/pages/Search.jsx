@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import { gql, useLazyQuery } from "@apollo/client";
+import Character from "./Character";
 
 const GET_CHARACTER_LOCATIONS = gql`
   query GetCharacterLocations($name: String!) {
@@ -18,7 +19,7 @@ const Search = () => {
   const [name, setName] = useState("");
   const [getLocations, { loading, error, data, called }] = useLazyQuery(
     GET_CHARACTER_LOCATIONS,
-    {   
+    {
       variables: {
         name,
       },
@@ -31,17 +32,15 @@ const Search = () => {
       <button onClick={() => getLocations()}>Search</button>
 
       {loading && <div>spinner ..</div>}
-          {error && <div>something wrong </div>}
-          
-          {
-              data && (
-                  <ul>
-                      {data.charcters.results.map(charcter => {
-                          return <li key={charcter.name}
-                      })}
-                  </ul>
-              )
-          }
+      {error && <div>something wrong </div>}
+
+      {data && (
+        <ul>
+          {data.charcters.results.map((charcter) => {
+            return <li key={charcter.name}>{Character.location.name}</li>;
+          })}
+        </ul>
+      )}
     </div>
   );
 };
