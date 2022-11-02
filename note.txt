@@ -1,0 +1,30 @@
+//if want to update state
+//action creator is to create the action
+//action object
+
+
+//data flow 
+//reducer
+//action
+//action creator
+//action type
+//Action Payload
+//Dispactch
+//sotre
+
+king , (server1 , server 2 ) ,peagenat ,  banker 
+king call action creator(server)
+server create (action )
+peageant dispatch the action to the banker 
+banker treat the action 
+
+king(UI) , server(action) , bank(store) , banker (reducer)
+
+//all of redux logic inside state folder
+
+
+
+1- create reducer 
+2- combine all reducer(you may have lotof reducer  to be shown in state)
+3-create store 
+4-hook up this store to our app
