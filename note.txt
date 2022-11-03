@@ -27,4 +27,5 @@ king(UI) , server(action) , bank(store) , banker (reducer)
 1- create reducer 
 2- combine all reducer(you may have lotof reducer  to be shown in state)
 3-create store 
-4-hook up this store to our app
+4-hook up this store to our app to be accessible everywehre
+5-create anction , andispatch (an action creator is a function that dispatch the action to the reducer()
